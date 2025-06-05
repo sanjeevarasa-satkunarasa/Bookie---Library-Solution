@@ -41,7 +41,6 @@ function returnBook() {
         }
     }
 
-    alert(`${loanedBook} has been sucessfully returned in!`)
     localStorage.setItem("library", JSON.stringify(library))
 
     libraryString = ""
