@@ -19,24 +19,24 @@
             <li><a href="help.html">Help and Documentation</a></li>
         </ul>
     </nav>
-    <a href="hjelp.html">Need help?</a>
+    <a href="help.html">Need help?</a>
     <h2>Fill out the form</h2>
     <div>
         <label>
-            Book name: <input type="text" id="bookName">
+            Book name: <input type="text" id="bookName" alt="book name input field">
         </label>
         <br>
         <label>
-            Number of books: <input type="number" id="bookCount" min="1">
+            Number of books: <input type="number" id="bookCount" min="1" alt="number of books input field">
         </label>
         <br>
         <label>
-            ISBN Number: <input type="number" id="ISBN">
+            ISBN Number: <input type="number" id="ISBN" alt="ISBN number input field">
         </label>
         <br>
         <label>
             Book type:
-            <select id="bookType">
+            <select id="bookType" alt="book type input field">
                 <option value="physical">Physical Book</option>
                 <option value="audio">Audiobook</option>
             </select>
@@ -44,7 +44,7 @@
         <br>
         <label>
             Genre:
-            <select id="bookGenre">
+            <select id="bookGenre" alt="genre input field">
                 <option value="horror">Horror</option>
                 <option value="crime">Crime</option>
                 <option value="romance">Romance</option>
@@ -52,7 +52,7 @@
             </select>
         </label>
         <br>
-        <button onclick="registerNewBook()">Submit Form</button>
+        <button onclick="registerNewBook()" alt="register new book">Submit Form</button>
     </div>
     </label>
     <h1>Books in the system</h1>
@@ -62,5 +62,5 @@
 </body>
 
 </html>
-<script src="/script/script.js">
+<script src="/script/register.js">
 </script>

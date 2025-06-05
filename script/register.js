@@ -1,5 +1,6 @@
 // HTML Elements
-const outputElement = document.getElementById('outputLibrary');
+let outputLibrary = document.getElementById('outputLibrary');
+let bookNameSelect = document.getElementById("bookNameSelect")
 
 
 // Checking if there is data in LocalStorage
@@ -10,10 +11,9 @@ if (localStorage.getItem("library")) {
 
 let libraryString = "";
 for (let i = 0; i < library.length; i++) {
-    libraryString += `<li>${library[i].bookName}</li>`;
+    libraryString += `<li>${library[i].bookName} has ${library[i].loaned ? "been" : "not been"} loaned out</li>`;
 }
-outputElement.innerHTML = libraryString;
-
+outputLibrary.innerHTML = libraryString;
 
 function registerNewBook() {
     let bookNameInput = document.getElementById('bookName');
@@ -31,13 +31,15 @@ function registerNewBook() {
         let isbn = Number(isbnInput.value);
         let booktype = bookTypeSelect.value;
         let bookGenre = bookGenreSelect.value;
+        let loaned = false;
 
         let book = {
             bookName,
             bookCount,
             isbn,
             booktype,
-            bookGenre
+            bookGenre,
+            loaned
         }
 
         console.log("Book registered:", book)
@@ -47,15 +49,11 @@ function registerNewBook() {
         console.log(library)
         localStorage.setItem("library", JSON.stringify(library))
 
-        let libraryString = "";
 
+        libraryString = ""
         for (let i = 0; i < library.length; i++) {
-            libraryString += JSON.stringify(library[i]).trim
+            libraryString += `<li>${library[i].bookName} has ${library[i].loaned ? "been" : "not been"} loaned out</li>`;
         }
-        outputElement.innerHTML = JSON.stringify(library)
+        outputLibrary.innerHTML = libraryString;
     }
 }
-
-
-
-
