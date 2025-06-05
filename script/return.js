@@ -10,7 +10,7 @@ if (localStorage.getItem("library")) {
 
 let libraryString = "";
 for (let i = 0; i < library.length; i++) {
-    libraryString += `<li>${library[i].bookName} has ${library[i].loaned ? "been" : "not been"} loaned out</li>`;
+    libraryString += `<li>${library[i].bookName} has ${library[i].loaned ? "been" : "not been"} loaned out, there are ${library[i].bookCount-library[i].loaned} left</li>`;
 }
 outputLibrary.innerHTML = libraryString;
 
@@ -24,7 +24,7 @@ library.forEach(book => {
 bookNameArray.sort()
 
 bookNameArray.forEach(book => {
-    bookNameSelect.innerHTML += `<option value=${book}>${book}</option>`
+    bookNameSelect.innerHTML += `<option value="${book}">${book}</option>`
 });
 
 function returnBook() {
@@ -33,10 +33,10 @@ function returnBook() {
     for (let i = 0; i < library.length; i++) {
 
         if (library[i].bookName == loanedBook) {
-            if (!library[i].loaned) {
-                alert("This book has already been returned")
+            if (library[i].loaned > 0) {
+                library[i].loaned--
             } else {
-                library[i].loaned = false
+                alert("All of the books have been returned")
             }
         }
     }
@@ -45,7 +45,7 @@ function returnBook() {
 
     libraryString = ""
     for (let i = 0; i < library.length; i++) {
-        libraryString += `<li>${library[i].bookName} has ${library[i].loaned ? "been" : "not been"} loaned out</li>`;
+        libraryString += `<li>${library[i].bookName} has ${library[i].loaned ? "been" : "not been"} loaned out, there are ${library[i].bookCount-library[i].loaned} left</li>`;
     }
     outputLibrary.innerHTML = libraryString;
 }

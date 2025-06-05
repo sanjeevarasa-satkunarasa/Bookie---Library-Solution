@@ -11,7 +11,7 @@ if (localStorage.getItem("library")) {
 
 let libraryString = "";
 for (let i = 0; i < library.length; i++) {
-    libraryString += `<li>${library[i].bookName} has ${library[i].loaned ? "been" : "not been"} loaned out</li>`;
+    libraryString += `<li>${library[i].bookName} has ${library[i].loaned ? "been" : "not been"} loaned out, there are ${library[i].bookCount-library[i].loaned} left</li>`;
 }
 outputLibrary.innerHTML = libraryString;
 
@@ -31,7 +31,14 @@ function registerNewBook() {
         let isbn = Number(isbnInput.value);
         let booktype = bookTypeSelect.value;
         let bookGenre = bookGenreSelect.value;
-        let loaned = false;
+        let loaned = 0;
+
+        // Emptying out each of the inputs
+        bookNameInput.value = "";
+        bookCountInput.value = "";
+        isbnInput.value = "";
+        bookTypeSelect.selectedIndex = 0;
+        bookGenreSelect.selectedIndex = 0;
 
         let book = {
             bookName,
@@ -52,7 +59,7 @@ function registerNewBook() {
 
         libraryString = ""
         for (let i = 0; i < library.length; i++) {
-            libraryString += `<li>${library[i].bookName} has ${library[i].loaned ? "been" : "not been"} loaned out</li>`;
+            libraryString += `<li>${library[i].bookName} has ${library[i].loaned ? "been" : "not been"} loaned out, there are ${library[i].bookCount-library[i].loaned} left</li>`;
         }
         outputLibrary.innerHTML = libraryString;
     }
