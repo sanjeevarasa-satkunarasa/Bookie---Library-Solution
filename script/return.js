@@ -10,7 +10,7 @@ if (localStorage.getItem("library")) {
 
 let libraryString = "";
 for (let i = 0; i < library.length; i++) {
-    libraryString += `<li>${library[i].bookName} has ${library[i].loaned ? "been" : "not been"} loaned out, there are ${library[i].bookCount-library[i].loaned} left</li>`;
+    libraryString += `<li>${library[i].bookName} has ${library[i].bookCount-library[i].loaned} books left</li>`;
 }
 outputLibrary.innerHTML = libraryString;
 
@@ -45,7 +45,7 @@ function returnBook() {
 
     libraryString = ""
     for (let i = 0; i < library.length; i++) {
-        libraryString += `<li>${library[i].bookName} has ${library[i].loaned ? "been" : "not been"} loaned out, there are ${library[i].bookCount-library[i].loaned} left</li>`;
+        libraryString += `<li>${library[i].bookName} has ${library[i].bookCount-library[i].loaned} books left</li>`;
     }
     outputLibrary.innerHTML = libraryString;
 }
