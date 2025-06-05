@@ -32,7 +32,7 @@ function borrowBook() {
 
     for (let i = 0; i < library.length; i++) {
         if (library[i].bookName == loanedBook) {
-            if (library[i].bookCount > 0) {
+            if (library[i].loaned < library[i].bookCount) {
                 library[i].loaned++
             } else {
                 alert("All of the books have been loaned out")
