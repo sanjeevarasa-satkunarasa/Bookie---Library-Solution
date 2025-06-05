@@ -1,16 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BOOKIE - Library Solution</title>
     <link rel="stylesheet" href="/styles/styles.css">
 </head>
+
 <body>
-    <h1>Registerer en bok</h1>
-    <a href="hjelp.html">Trenger du hjelp?</a>
-    <input type="text" id="bookName">
+    <h1>Register a book</h1>
+    <nav>
+        <ul>
+            <li><a href="/index.html">Main Menu</a></li>
+            <li><a href="register.html">Register Books</a></li>
+            <li><a href="borrow.html">Loan out books</a></li>
+            <li><a href="return.html">Return Books</a></li>
+            <li><a href="help.html">Help and Documentation</a></li>
+        </ul>
+    </nav>
+    <a href="hjelp.html">Need help?</a>
+    <h2>Fill out the form</h2>
+    <div>
+        <label>
+            Book name: <input type="text" id="bookName">
+        </label>
+        <br>
+        <label>
+            Number of books: <input type="number" id="bookCount" min="1">
+        </label>
+        <br>
+        <label>
+            ISBN Number: <input type="number" id="ISBN">
+        </label>
+        <br>
+        <label>
+            Book type:
+            <select id="bookType">
+                <option value="physical">Physical Book</option>
+                <option value="audio">Audiobook</option>
+            </select>
+        </label>
+        <br>
+        <label>
+            Genre:
+            <select id="bookGenre">
+                <option value="horror">Horror</option>
+                <option value="crime">Crime</option>
+                <option value="romance">Romance</option>
+                <option value="fantasy">Fantasy</option>
+            </select>
+        </label>
+        <br>
+        <button onclick="registerNewBook()">Submit Form</button>
+    </div>
+    </label>
+    <h1>Books in the system</h1>
+    <ul id="outputLibrary">
+
+    </ul>
 </body>
+
 </html>
 <script src="/script/script.js">
 </script>
