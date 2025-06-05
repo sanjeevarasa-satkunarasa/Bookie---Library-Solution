@@ -7,8 +7,35 @@
     <link rel="stylesheet" href="/styles/styles.css">
 </head>
 <body>
-    
+     <nav>
+        <ul>
+            <li><a href="/index.html">Main Menu</a></li>
+            <li><a href="register.html">Register Books</a></li>
+            <li><a href="borrow.html">Loan out books</a></li>
+            <li><a href="return.html">Return Books</a></li>
+            <li><a href="help.html">Help and Documentation</a></li>
+        </ul>
+    </nav>
+    <h1>Return a book</h1>
+    <a href="help.html">Need help?</a>
+    <h2>Choose out a book from the options below:</h2>
+    <div>
+        <label>
+            Book name:
+            <select id="bookNameSelect" alt="select book for return">
+                <!-- Options will be genrated by JavaScript -->
+            </select>
+        </label>
+        <br>
+        <button onclick="returnBook()" alt="return selected book">Return Book</button>
+   </div>
+    <div>
+        <h1>Books in the system</h1>
+        <ul id="outputLibrary">
+
+        </ul>
+    </div>
 </body>
 </html>
-<script src="/script/script.js">
+<script src="/script/return.js">
 </script>

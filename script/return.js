@@ -27,21 +27,21 @@ bookNameArray.forEach(book => {
     bookNameSelect.innerHTML += `<option value=${book}>${book}</option>`
 });
 
-function borrowBook() {
+function returnBook() {
     let loanedBook = bookNameSelect.value
 
     for (let i = 0; i < library.length; i++) {
 
         if (library[i].bookName == loanedBook) {
-            if (library[i].loaned) {
-                alert("This book has already been loaned out")
+            if (!library[i].loaned) {
+                alert("This book has already been returned")
             } else {
-                library[i].loaned = true
+                library[i].loaned = false
             }
         }
     }
 
-    alert(`${loanedBook} has been sucessfully loaned out!`)
+    alert(`${loanedBook} has been sucessfully returned in!`)
     localStorage.setItem("library", JSON.stringify(library))
 
     libraryString = ""

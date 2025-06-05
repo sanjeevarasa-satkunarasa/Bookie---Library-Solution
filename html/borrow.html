@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BOOKIE - Library Solution</title>
     <link rel="stylesheet" href="/styles/styles.css">
 </head>
+
 <body>
-     <nav>
+    <nav>
         <ul>
             <li><a href="/index.html">Main Menu</a></li>
             <li><a href="register.html">Register Books</a></li>
@@ -18,7 +20,7 @@
     </nav>
     <h1>Loan out a book</h1>
     <a href="help.html">Need help?</a>
-    <h2>Choose out a book from the options below;</h2>
+    <h2>Choose out a book from the options below:</h2>
     <div>
         <label>
             Book name:
@@ -28,8 +30,15 @@
         </label>
         <br>
         <button onclick="borrowBook()" alt="loan selected book">Borrow Book</button>
-   
+    </div>
+    <div>
+        <h1>Books in the system</h1>
+        <ul id="outputLibrary">
+
+        </ul>
+    </div>
 </body>
+
 </html>
 <script src="/script/borrow.js">
 </script>
