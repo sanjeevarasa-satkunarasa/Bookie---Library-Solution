@@ -2,7 +2,6 @@
 let outputLibrary = document.getElementById('outputLibrary');
 let bookNameSelect = document.getElementById("bookNameSelect")
 
-
 // Checking if there is data in LocalStorage
 let library = [];
 if (localStorage.getItem("library")) {
@@ -26,7 +25,7 @@ function registerNewBook() {
         alert("One or more form elements are missing from the page");
     } else {
         // Get all values
-        let bookName = bookNameInput.value.trim();
+        let bookName = bookNameInput.value;
         let bookCount = Number(bookCountInput.value);
         let isbn = Number(isbnInput.value);
         let booktype = bookTypeSelect.value;
